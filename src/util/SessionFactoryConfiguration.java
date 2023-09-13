@@ -5,6 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import entity.CustomerEntity;
+import entity.ItemEntity;
+import entity.OrderDetailEntity;
 import entity.OrderEntity;
 
 
@@ -17,7 +19,9 @@ public class SessionFactoryConfiguration {
     private SessionFactoryConfiguration(){
         Configuration configuration = new Configuration().configure()
         .addAnnotatedClass(CustomerEntity.class)
-        .addAnnotatedClass(OrderEntity.class);;
+        .addAnnotatedClass(OrderEntity.class)
+        .addAnnotatedClass(ItemEntity.class)
+        .addAnnotatedClass(OrderDetailEntity.class);
         
         sessionFactory = configuration.buildSessionFactory();
     }
